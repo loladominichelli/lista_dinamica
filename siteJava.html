@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Style.css">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Obtém o elemento com o ID "frase" e o botão
+            const p1 = document.getElementById("p1");
+            const p2 = document.getElementById("p2");
+            const botao = document.getElementById("botao");
+            const body = document.getElementsByTagName("body")[0];
+            let contador = 0; // Variável para contar os cliques
+
+            // Adiciona um evento de clique ao botão
+            botao.addEventListener("click", function () {
+                contador = (contador + 1) % 2; // Alterna entre 0, 1 e 2
+
+                // Altera a cor de fundo com base no valor do contador
+                switch (contador) {
+                    case 1:
+                        p1.style.visibility = "hidden"; // Deixa invisível
+                        p2.style.visibility = "visible"; // Torna visível
+                        body.style.backgroundColor = "yellow"; // Cor de fundo amarela
+                        body.style.color = "red"; // Cor do texto vermelho
+                        break;
+
+                    default:
+                        p1.style.visibility = "visible"; // Torna visível
+                        p2.style.visibility = "hidden"; // Deixa invisível
+                        body.style.backgroundColor = "blue"; // Cor de fundo azul
+                        body.style.color = "white"; // Cor do texto branco
+                        break;
+                }
+            });
+        });
+    </script>
+
+</head>
+<body>
+
+    <header>
+        <h1>Bem-vindo à nossa página!</h1>
+        <p>Nossa página é especial, ela muda de acordo com o usuário.</p>
+    </header>
+
+    <main>
+        <p>Vejamos algumas cores</p>
+        <br>
+        <p id="p1">Esta página é azul!</p>
+        <br>
+        <p id="p2">Esta página é amarela!</p>
+        <br>
+        <p>Clique para mudar a página!</p>
+        <button id="botao">Clique!</button>
+    </main>
+
+</body>
+</html>

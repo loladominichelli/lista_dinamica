@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alternar Cor de Fundo</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Obtém o elemento com o ID "frase" e o botão
+            const frase = document.getElementById("frase");
+            const botao = document.getElementById("botao");
+            let contador = 0; // Variável para contar os cliques
+
+            // Adiciona um evento de clique ao botão
+            botao.addEventListener("click", function () {
+                contador = (contador + 1) % 2; // Alterna entre 0, 1 e 2
+
+                // Altera o desaparecimento da frase com base no valor do contador
+                switch (contador) {
+                    case 1:
+                        frase.style.visibility = "hidden"; // deixa invisível
+                        break;
+                        
+                    default:
+                    frase.style.visibility = "visible"; // deixa visível
+                        break;
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- Parágrafo que será alterado pelo botão -->
+    <p id="frase">Clique no botão para fazê-lo desaparecer!</p>
+    <!-- Botão para alterar a cor da frase -->
+    <button id="botao">Click</button>
+</body>
+</html>
